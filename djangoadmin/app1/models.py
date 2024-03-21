@@ -1,3 +1,9 @@
 from django.db import models
 
-# Create your models here.
+class User(models.Model):
+  name = models.CharField('name', max_length=30)
+  phone = models.IntegerField('phone')
+  email = models.CharField('email', max_length=30)
+
+  def __srt__(self):
+    return f"Name: {self.name}, Phone: {self.phone}, Email: {self.email}"
