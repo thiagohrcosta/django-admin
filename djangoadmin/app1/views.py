@@ -21,10 +21,18 @@ def create(request):
       form.save()
 
       context = {
-          'form': form,
+          'name': form.cleaned_data['name'],
+          'phone': form.cleaned_data['phone'],
+          'email': form.cleaned_data['email']
       }
       
       return render(request, 'user/index.html', context=context)
 
   # elif request.method == 'POST':
   #   return render(request, 'user/')
+
+def edit(request, user_id):
+  context = {
+    'id': user_id
+  }
+  return render(request, 'user/index.html', context=context)
