@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>User Index</h1>
+  
+  <div class="d-flex">
+    {% if id %}
+      <h2>{{id}}</h2>
+    {% endif %}
+
+    {% if name %}
+      <h2>{{name}}</h2>
+    {% endif %}
+  </div>
+  <div class="d-flex mt-4">
+    {% if phone %}
+      <h4 class="me-3">Phone: {{phone}}</h4>
+    {% endif %}
+
+    {% if email %}
+      <h4 class="">{{email}}</h4>
+    {% endif %}
+  </div>
+{% endblock %}
